@@ -1,13 +1,7 @@
 import { Component } from '@angular/core';
 
-export class Contact {
-  id: number;
-  name: string;
-  mobile: string;
-  email: string;
-
-  
-}
+import { Contact } from './contact';
+ 
 const CONTACTS: Contact[] = [
       { id: 11, name: 'Mr. Nice',mobile:'9708213024',email:"pratik007kumar@gmail.com" },
       { id: 12, name: 'Narco',mobile:'9708213024',email:"pratik007kumar@gmail.com" },
@@ -36,37 +30,7 @@ const CONTACTS: Contact[] = [
   			</ul>
   			</div>
 
-  			    <div class="col-lg-6" *ngIf="selectedContact">
-			      <div class="well">
-			      <div class="row">
-
-			      <h2>{{selectedContact.name}} details!</h2>
-			      <div class="col-lg-6">
-	  				<div class="form-group">
-	  				<label class="label label-default" >Name:</label>
-	  				<br>
-	  				<br>
-	  				<input [(ngModel)]="selectedContact.name" placeholder="name" class="form-control">
-	  				</div>
-
-	  				<div class="form-group">
-
-	  				<label class="label label-default">Mobile:</label>
-	  				<br>
-	  				<br>
-	  				<input [(ngModel)]="selectedContact.mobile" class="form-control" placeholder="name">
-	  				</div>
-
-	  				<div class="form-group ">
-	  				<label class="label label-default">Email:</label>
-	  				<br>
-	  				<br>
-	  				<input type="email" [(ngModel)]="selectedContact.email" class="form-control" placeholder="name">
-	  				</div>
-	  				</div>
-	  				</div>
-
-			    </div>
+  			   <contact-details [contact]="selectedContact"></contact-details>
   			</div>
   	`,
  styles:[`
